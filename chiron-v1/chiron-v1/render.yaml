@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: chiron
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: MAILCHIMP_API_KEY
+        sync: false
+      - key: MAILCHIMP_LIST_ID
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
